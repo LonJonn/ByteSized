@@ -1,0 +1,142 @@
+$colour-light-blue: #67bcff;
+$colour-font: #343a40;
+$border-width-main: 2px;
+
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    user-select: none;
+}
+
+html {
+    min-height: 100%;
+    background: linear-gradient(to bottom right, #f3e7e9 0%, #d8e7ff 99%, #e3eeff 100%);
+    font-family: 'Asap', 'sans-serif';
+    letter-spacing: px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    margin: 6px 0px 12px;
+    opacity: 0.6;
+    background-color: $colour-font;
+    border-color: $colour-font;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.program {
+    border: solid $border-width-main $colour-light-blue;
+    border-radius: 2px;
+    background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
+    margin: 300px auto 0;
+    width: 1030px;
+    height: 585px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    opacity: 0;
+    //display: none;
+}
+
+.header {
+    width: 1026px;
+    height: 35px;
+    background: $colour-light-blue;
+    text-align: center;
+
+    h2 {
+        color: white;
+        font-family: sans-serif;
+        font-size: 25px;
+        line-height: 32px;
+        letter-spacing: 3px;
+        font-family: 'Oswald', sans-serif;
+        transition-duration: 0.2s;
+
+        div {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background: white;
+            margin: 5px 8px 5px 5px;
+            border-radius: 100px;
+
+        }
+    }
+}
+
+.sidebar {
+    display: inline-block;
+    background: #e9ecef;
+    width: 250px;
+    height: 546px;
+    box-shadow: 10px 2px 30px 0px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    color: $colour-font;
+
+    h2 {
+        font-weight: 600;
+        display: inline-block;
+        margin: 0 110px 0 0;
+    }
+
+    .stats {
+        width: 89%;
+        margin: -25px 0 35px 25px;
+        display: block;
+        font-family: 'Oswald', 'sans-serif';
+        font-weight: bold; //background: pink;
+        font-size: 1.5em;
+
+        h1 {
+            display: block;
+            font-family: 'Oswald', 'sans-serif';
+            color: #51cf66;
+            font-size: 2.25em;
+            line-height: 40px;
+            margin-bottom: 12px;
+        }
+
+        .per-second {
+            margin: 5px 0 0 0;
+            font-weight: lighter;
+            float: right;
+            font-size: 20px;
+            font-weight: 0;
+            vertical-align: bottom;
+
+            span {
+                color: #ff922b;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    background: $colour-light-blue;
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    top: 50px;
+    left: 270px;
+    transition-duration: 0.2s;
+
+    .fa-microchip {
+        margin: 44px 0 0 44px;
+        color: #343a40;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &:active {
+        transform: scale(1.1);
+    }
+}
