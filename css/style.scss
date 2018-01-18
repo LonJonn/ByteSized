@@ -32,7 +32,7 @@ html {
     border: solid $border-width-main $colour-light-blue;
     border-radius: 2px;
     background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
-    margin: 300px auto 0;
+    margin: 200px auto 0;
     width: 1030px;
     height: 585px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
@@ -95,7 +95,7 @@ html {
             display: block;
             font-family: 'Oswald', 'sans-serif';
             color: #51cf66;
-            font-size: 2.25em;
+            font-size: 2.1em;
             line-height: 40px;
             margin-bottom: 12px;
         }
@@ -130,6 +130,7 @@ html {
     .fa-microchip {
         margin: 44px 0 0 44px;
         color: #343a40;
+        transition-duration: 0.15s;
     }
 
     &:hover {
