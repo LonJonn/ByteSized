@@ -9,7 +9,8 @@
                 "sourceComments": false,
                 "outputStyle": "compressed"
             },
-            "linting.collapsed": true
+            "linting.collapsed": true,
+            "brackets-git.terminalCommand": "/Users/Leon/Library/Application Support/Brackets/extensions/user/zaggino.brackets-git/shell/terminal.osa"
         }
     }
 }

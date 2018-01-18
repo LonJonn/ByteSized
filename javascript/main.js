@@ -14,7 +14,7 @@ $(document).ready(function () {
         bits += GenRate;
     }
 
-//########################
+//#######################
 
     $("html").click(function () {
         $(".program").animate({
