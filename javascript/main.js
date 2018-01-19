@@ -1,17 +1,17 @@
 var colourList = ['#ff8787', '#f783ac', '#da77f2', '#748ffc', '#3bc9db', '#69db7c', '#ffa94d'];
 var bits = 0;
-var clickRate = 1;
-var GenRate = 0;
+var clickRate = 50;
+var GenRate = 10;
 
 $(document).ready(function () {
 
     function updateBits() {
-        $("#bits").html(bits.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        $("#bits").html(Math.round(bits).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
     }
 
     function bitGenerator() {
         $("#bitGenRate").html(GenRate);
-        bits += GenRate;
+        bits += GenRate/4;
     }
 
 //#######################
@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('.button').on('click', function () {
         $(this).css('background', colourList[Math.floor(Math.random() * colourList.length)]);
         bits += clickRate;
-        $("#bits").html(bits.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        updateBits();
         $(".fa-microchip").css('transform', 'rotate(' + Math.floor(Math.random() * 180) + 'deg)');
     }).on('mouseleave', function () {
         $(this).css('background', '#67bcff');
@@ -42,6 +42,6 @@ $(document).ready(function () {
 //#########################
 
     setInterval(updateBits, 250);
-    setInterval(bitGenerator, 1000)
+    setInterval(bitGenerator, 250)
 
 })
