@@ -28,21 +28,8 @@ html {
     border-right: 0px;
 }
 
-.program {
-    border: solid $border-width-main $colour-light-blue;
-    border-radius: 2px;
-    background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
-    margin: 200px auto 0;
-    width: 1030px;
-    height: 585px;
-    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    opacity: 0;
-    //display: none;
-}
-
 .header {
-    width: 1026px;
+    width: auto;
     height: 35px;
     background: $colour-light-blue;
     text-align: center;
@@ -53,7 +40,8 @@ html {
         font-size: 25px;
         line-height: 32px;
         letter-spacing: 3px;
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Oswald', sans-serif !important;
+        font-weight: bold !important;
         transition-duration: 0.2s;
 
         div {
@@ -66,6 +54,114 @@ html {
 
         }
     }
+}
+
+.login {
+    border: solid $border-width-main $colour-light-blue;
+    border-radius: 2px;
+    background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
+    margin: 200px auto 0;
+    width: 680px;
+    height: 350px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+
+    * {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: Bold;
+        transition-duration: 0.2s;
+    }
+
+    .fa-user {
+        position: absolute;
+        top: 280px;
+        left: 660px;
+        transform: scale(0.8);
+        color: $colour-font;
+    }
+
+    .fa-unlock-alt {
+        position: absolute;
+        top: 364px;
+        left: 660px;
+        transform: scale(0.8);
+        color: $colour-font;
+    }
+
+    .fa-eye-slash {
+        position: absolute;
+        top: 363px;
+        left: 955px;
+        transform: scale(0.7);
+        color: #777d84;
+
+        &:active {
+            transform:  scale(0.6);
+        }
+    }
+
+    .entry {
+        background: #e9ecef;
+        outline: 0;
+        display: block;
+        margin: 35px auto;
+        width: 300px;
+        font-size: 25px;
+        border-radius: 3px;
+        border: solid 2px #e9ecef;
+        padding: 6px 10px;
+        color: $colour-font;
+
+        &:focus {
+            border: solid 2px $colour-light-blue;
+        }
+    }
+
+    button {
+        display: block;
+        outline: 0;
+        color: #fafafa;
+        background: #51cf66;
+        margin: 0 auto;
+        font-size: 30px;
+        border-radius: 5px;
+        border-bottom: solid 4px #37b24d;
+        padding: 8px 40px;
+        margin-bottom: 8px;
+
+        &:hover {
+            background: #40c057;
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    div {
+        color: #495057;
+        font-size: 18px;
+        text-align: center;
+
+        &:hover {
+            color: $colour-light-blue;
+        }
+
+        &:active {
+            color: #529cd6;
+        }
+    }
+}
+
+.program {
+    border: solid $border-width-main $colour-light-blue;
+    border-radius: 2px;
+    background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
+    margin: 200px auto 0;
+    width: 1030px;
+    height: 585px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    position: relative; //opacity: 0;
+    display: none;
 }
 
 .sidebar {
@@ -119,7 +215,7 @@ html {
 .button {
     position: relative;
     display: inline-block;
-    background: $colour-light-blue;
+    background: linear-gradient(to bottom right, #56ccf2, $colour-light-blue);
     border-radius: 100px;
     width: 200px;
     height: 200px;

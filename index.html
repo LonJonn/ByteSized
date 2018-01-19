@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <title>Byte</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Asap|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Asap|Source+Sans+Pro:400,600|Montserrat:400,500" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="javascript/main.js"></script>
 </head>
 
 <body>
+    <div class="login">
+        <div class="header" id='header'>
+            <h2>WELCOME</h2>
+        </div>
+        <i class="fas fa-user fa-2x"></i>
+        <input type="text" placeholder="Username" id="username" class="entry">
+        <i class="fas fa-unlock-alt fa-2x"></i>
+        <input type="password" placeholder="Password"  id="password" class="entry">
+        <div id='showhide'><i class="fas fa-eye-slash fa-2x"></i></div>
+        <button id="submit">Login</button>
+        <div>Register »</div>
+    </div>
     <div class="program">
         <div class="header" id='header'>
-            <h2>BYTE<div></div>SIZED</h2>
+            <h2>BYTE
+                <div></div>SIZED</h2>
         </div>
         <div class="shop">
 
@@ -26,9 +40,9 @@
                 <div class="line"></div>
                 <i class="fas fa-caret-right fa-2x"></i>
                 <div class="stats">
-                    <h1 id="bits">1,525,867</h1>
+                    <h1 id="bits">...</h1>
                     BITS
-                    <span class='per-second'><span id="bitGenRate">3.8</span> /second</span>
+                    <span class='per-second'><span id="bitGenRate">...</span> /second</span>
                 </div>
             </container>
         </div>
