@@ -111,9 +111,9 @@ $(document).ready(function () {
     setInterval(save, 120000);
     setInterval(function () {
         if (localStorage.getItem('Users').split(':').includes($('#username').val())) {
-            $('#username').css('border', 'solid 2px pink');
+            $('.fa-check').css('opacity', '1');
         } else {
-            $('#username').css('border', 'solid 2px #e9ecef')
+            $('.fa-check').css('opacity', '0')
         }
     }, 1000)
     //setInterval(updateBits, 250);
