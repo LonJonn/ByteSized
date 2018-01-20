@@ -71,26 +71,21 @@ html {
         transition-duration: 0.2s;
     }
 
-    .fa-user {
-        position: absolute;
-        top: 280px;
-        left: 660px;
+    .fa-user, .fa-unlock-alt {
+        position: relative;
+        top: 3px;
         transform: scale(0.8);
         color: $colour-font;
     }
 
-    .fa-unlock-alt {
-        position: absolute;
-        top: 364px;
-        left: 660px;
-        transform: scale(0.8);
-        color: $colour-font;
+    #showhide {
+        display: inline;
     }
 
     .fa-eye-slash {
-        position: absolute;
-        top: 363px;
-        left: 955px;
+        position: relative;
+        top: 5px;
+        left: -50px;
         transform: scale(0.7);
         color: #777d84;
 
@@ -99,11 +94,23 @@ html {
         }
     }
 
+    .user, .pass {
+        display: block;
+    }
+
+    .pass {
+        position: relative;
+        left: 23px;
+    }
+
+    #username {
+        margin: 35px auto;
+    }
+
     .entry {
         background: #e9ecef;
         outline: 0;
-        display: block;
-        margin: 35px auto;
+        margin: 0 auto 35px;
         width: 300px;
         font-size: 25px;
         border-radius: 3px;
