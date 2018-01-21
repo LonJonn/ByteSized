@@ -6,8 +6,8 @@ var genRate = parseInt(localStorage.getItem('Generator Rate'));
 $(document).ready(function () {
 
     if (localStorage.getItem('Users') === null) {
-        localStorage.setItem('Users', 'Admin')
-        localStorage.setItem('Admin', '1234:999999:10000:999')
+        localStorage.setItem('Users', 'admin')
+        localStorage.setItem('admin', '1234:999999:10000:999')
     }
 
  //START FUNCTIONS#######################################################
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     //END FUNCTIONS######################################################
 
-    /*$("html").click(function () {
+    /*$(document).click(function () {
         $(".program").animate({
             bottom: '100px',
             opacity: '1'
@@ -91,6 +91,12 @@ $(document).ready(function () {
     $('#register').on('click', function () {
         register();
     })
+
+    $('.login').keypress(function(e){
+    if (e.which == 13){
+        $("#submit").click();
+    }
+});
 
     $('.button').on('click', function () {
         $(this).css('background', colourList[Math.floor(Math.random() * colourList.length)]);

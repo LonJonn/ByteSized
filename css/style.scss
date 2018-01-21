@@ -33,6 +33,7 @@ html {
     height: 35px;
     background: $colour-light-blue;
     text-align: center;
+    cursor: pointer;
 
     h2 {
         color: white;
@@ -60,7 +61,7 @@ html {
     border: solid $border-width-main $colour-light-blue;
     border-radius: 2px;
     background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
-    margin: 200px auto 0;
+    margin: 100px auto 0;
     width: 680px;
     height: 350px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
@@ -93,6 +94,7 @@ html {
         position: relative;
         top: 5px;
         left: -50px;
+        cursor: pointer;
     }
 
     .fa-eye-slash {
@@ -147,6 +149,7 @@ html {
         border-bottom: solid 4px #37b24d;
         padding: 8px 40px;
         margin-bottom: 8px;
+        cursor: pointer;
 
         &:hover {
             background: #40c057;
@@ -161,6 +164,7 @@ html {
         color: #495057;
         font-size: 18px;
         text-align: center;
+        cursor: pointer;
 
         &:hover {
             color: $colour-light-blue;
