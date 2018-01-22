@@ -181,14 +181,14 @@ html {
     text-align: center;
     margin: 30vh 0 0;
     color: $colour-font;
-    //display: none;
+    display: none;
 }
 
 .program {
     border: solid $border-width-main $colour-light-blue;
     border-radius: 2px;
     background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
-    margin: 20vh auto 0;
+    margin: 10vh auto 0;
     width: 1030px;
     height: 585px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
@@ -242,41 +242,52 @@ html {
             }
         }
     }
+
+    .settings {
+        //display: none;
+    }
 }
 
-.button {
-    //position: relative;
+.main {
     display: inline-block;
-    background: linear-gradient(to bottom right, #56ccf2, $colour-light-blue);
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    top: 50px;
-    left: 270px;
-    transition-duration: 0.2s;
+    vertical-align: top;
+    width: 518px;
+    height: 546px;
 
-    .fa-microchip {
-        margin: 44px 0 0 44px;
-        color: #343a40;
-        transition-duration: 0.15s;
-    }
+    .button {
+        display: block;
+        background: linear-gradient(to bottom right, #56ccf2, $colour-light-blue);
+        border-radius: 100px;
+        width: 200px;
+        height: 200px;
+        margin: 20% auto 0;
+        transition-duration: 0.2s;
 
-    &:hover {
-        transform: scale(1.2);
-    }
+        .fa-microchip {
+            margin: 44px 0 0 44px;
+            color: #343a40;
+            transition-duration: 0.15s;
+        }
 
-    &:active {
-        transform: scale(1.1);
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &:active {
+            transform: scale(1.1);
+        }
     }
 }
 
 .shop {
-    background: pink;
-    width: 100px;
-    height: 100px;
-    display: inline;
-    position: relative;
-    left: 1000px;
+    display: inline-block;
+    vertical-align: top;
+    background: #d300b2;
+    width: 250px;
+    height: 546px;
+    box-shadow: -10px 2px 30px 0px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    color: $colour-font;
 }
 
 
