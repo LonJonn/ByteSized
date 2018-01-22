@@ -1,5 +1,5 @@
 $colour-light-blue: #67bcff;
-$colour-font: #363e46;
+$colour-font: #313b45;
 $border-width-main: 2px;
 
 * {
@@ -14,6 +14,23 @@ html {
     background: linear-gradient(to bottom right, #f3e7e9 0%, #d8e7ff 99%, #e3eeff 100%);
     font-family: 'Asap', 'sans-serif';
     letter-spacing: px;
+}
+
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar
+{
+	width: 4px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 20px;
+	background-color: rgb(85, 85, 85);
+
 }
 
 .line {
@@ -60,7 +77,7 @@ html {
     width: 680px;
     height: 350px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
-    display: none;
+    //display: none;
 
     * {
         font-family: 'Source Sans Pro', sans-serif;
@@ -190,17 +207,17 @@ html {
     background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
     margin: 10vh auto 0;
     width: 1030px;
-    height: 585px;
+    height: 485px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
     position: relative; //opacity: 0;
-    //display: none;
+    display: none;
 }
 
 .sidebar {
     display: inline-block;
     background: #e9ecef;
     width: 250px;
-    height: 546px;
+    height: 446px;
     box-shadow: 10px 2px 30px 0px rgba(0, 0, 0, 0.2);
     padding: 15px;
     color: $colour-font;
@@ -216,7 +233,7 @@ html {
         margin: -25px 0 35px 25px;
         display: block;
         font-family: 'Oswald', 'sans-serif';
-        font-weight: bold; //background: pink;
+        font-weight: bold;
         font-size: 1.5em;
 
         h1 {
@@ -245,6 +262,10 @@ html {
 
     .settings {
         //display: none;
+    }
+
+    .storage {
+        margin: 0 0 178px 0;
     }
 }
 
@@ -279,19 +300,72 @@ html {
     }
 }
 
+
+
 .shop {
     display: inline-block;
     vertical-align: top;
-    background: #d300b2;
+    text-align: right;
     width: 250px;
-    height: 546px;
-    box-shadow: -10px 2px 30px 0px rgba(0, 0, 0, 0.15);
+    height: 446px;
     padding: 15px;
     color: $colour-font;
+
+    h2 {
+        font-weight: 600;
+        display: inline-block;
+        margin: 0 2px 0 90px;
+    }
 }
 
+.upgrades {
+    height: 370px;
+    overflow-y: hidden;
+    direction: rtl;
+    padding-left: 12px;
 
-
-.storage {
-    margin: 0 0 240px 0;
+    &:hover {
+        overflow-y: scroll;
+        padding-left: 8px;
+    }
 }
+
+.item {
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: bold;
+    color: #363e46;
+    padding: 0 5px;
+    border-bottom: solid 2px rgba(54, 62, 70, 0.65);
+    direction: ltr;
+    transition-duration: 0.1s;
+
+    &:hover {
+        background: rgba(81, 178, 232, 0.15);
+    }
+
+    &:active {
+        background: rgba(81, 178, 232, 0.35);
+    }
+}
+
+.itemCost {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #4fcf64;
+}
+
+.itemOwned {
+    color: #2d85cb;
+    position: relative;
+    display: inline;
+    top: -7px;
+    float: left;
+    font-size: 48px;
+    opacity: 0.5;
+}
+.itemName {
+    font-weight: normal;
+    display: inline-block;
+    font-size: 1.6em;
+}
+

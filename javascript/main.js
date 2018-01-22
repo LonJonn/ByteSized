@@ -139,4 +139,14 @@ $(document).ready(function () {
         }
     }, 1000);
 
+    setInterval(function () {
+        for (var i = 0; i < $('.upgrades').children().length; i++) {
+            if (parseInt($('.upgrades > #item' + i + ' > .itemCost > #cost').html()) < bits) {
+                $('.upgrades > #item' + i + ' > .itemCost > #cost').parent().css('color', '#51cf66');
+            } else {
+                $('.upgrades > #item' + i + ' > .itemCost > #cost').parent().css('color', '#ed6e6e');
+            }
+        }
+    }, 250)
+
 })

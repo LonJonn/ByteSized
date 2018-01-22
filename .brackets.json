@@ -10,7 +10,8 @@
                 "outputStyle": "compressed"
             },
             "linting.collapsed": true,
-            "brackets-git.terminalCommand": "/Users/Leon/Library/Application Support/Brackets/extensions/user/zaggino.brackets-git/shell/terminal.osa"
+            "brackets-git.terminalCommand": "/Users/Leon/Library/Application Support/Brackets/extensions/user/zaggino.brackets-git/shell/terminal.osa",
+            "brackets-git.gitPath": "git"
         }
     }
 }
