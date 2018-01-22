@@ -25,14 +25,14 @@ $(document).ready(function () {
 
     function loginSuccessful(name) {
         $('.welcome').html('Welcome, ' + name + '.')
-        $('.login').fadeOut(1500, function () {
-            $('.welcome').fadeIn(1500, function () {
-                $('.welcome').delay(500).fadeOut(1500, function () {
+        $('.login').fadeOut(15, function () {
+            $('.welcome').fadeIn(15, function () {
+                $('.welcome').delay(5).fadeOut(15, function () {
                     setValues(name);
                     setInterval(updateBits, 250);
                     setInterval(bitGenerator, 250);
                     setInterval(save, 60000);
-                    $('.program').fadeIn(1500);
+                    $('.program').fadeIn(15);
                 });
             });
         });

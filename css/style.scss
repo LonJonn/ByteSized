@@ -60,7 +60,7 @@ html {
     width: 680px;
     height: 350px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
-    //display: none;
+    display: none;
 
     * {
         font-family: 'Source Sans Pro', sans-serif;
@@ -181,8 +181,7 @@ html {
     text-align: center;
     margin: 30vh 0 0;
     color: $colour-font;
-    display: none;
-    //opacity: 1;
+    //display: none;
 }
 
 .program {
@@ -194,7 +193,7 @@ html {
     height: 585px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
     position: relative; //opacity: 0;
-    display: none;
+    //display: none;
 }
 
 .sidebar {
@@ -246,7 +245,7 @@ html {
 }
 
 .button {
-    position: relative;
+    //position: relative;
     display: inline-block;
     background: linear-gradient(to bottom right, #56ccf2, $colour-light-blue);
     border-radius: 100px;
@@ -278,4 +277,10 @@ html {
     display: inline;
     position: relative;
     left: 1000px;
+}
+
+
+
+.storage {
+    margin: 0 0 240px 0;
 }
