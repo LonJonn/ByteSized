@@ -337,10 +337,12 @@ html {
     padding: 0 5px;
     border-bottom: solid 2px rgba(54, 62, 70, 0.65);
     direction: ltr;
-    transition-duration: 0.1s;
+    transition-duration: 0.2s;
 
     &:hover {
         background: rgba(81, 178, 232, 0.15);
+        border-right: solid 5px $colour-light-blue;
+        padding-right: 10px;
     }
 
     &:active {
@@ -349,7 +351,7 @@ html {
 }
 
 .itemCost {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 5px;
     color: #4fcf64;
 }
@@ -358,9 +360,9 @@ html {
     color: #2d85cb;
     position: relative;
     display: inline;
-    top: -7px;
+    top: -4px;
     float: left;
-    font-size: 48px;
+    font-size: 46px;
     opacity: 0.5;
 }
 .itemName {
