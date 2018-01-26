@@ -78,13 +78,6 @@ $(document).ready(function () {
 
     //END FUNCTIONS######################################################
 
-    /*$(document).click(function () {
-        $(".program").animate({
-            bottom: '100px',
-            opacity: '1'
-        }, 1500);
-    })*/
-
     $('.header h2').on('click', function () {
         $(this).css('letter-spacing', Math.floor(Math.random() * 20))
     }).on('mouseleave', function () {
@@ -125,6 +118,13 @@ $(document).ready(function () {
     }).on('mouseleave', function () {
         $(this).css('background', 'linear-gradient(to bottom right, #56ccf2, #67bcff)');
         $(".fa-microchip").css('transform', 'rotate(0)');
+    })
+
+    $('.delete').on('click', function () {
+        user = $('#username').val()
+        userInfo = localStorage.getItem(user).split(':');
+        localStorage.setItem(user, userInfo[0]+':0:1:0')
+        location.reload();
     })
 
 
