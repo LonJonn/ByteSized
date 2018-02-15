@@ -1,82 +1,112 @@
 var colourList = ['#ff8787', '#f783ac', '#da77f2', '#748ffc', '#3bc9db', '#69db7c', '#ffa94d'];
 
-$(document).ready(function () {
+if (localStorage.getItem('Users') === null) {
+    localStorage.setItem('Users', '[{"username":"admin","password":"1234","bits":99999,"clickRate":100,"genRate":99,"upgrades":{"item0":0}}]');
+}
 
-    if (localStorage.getItem('Users') === null) {
-        localStorage.setItem('Users', 'admin')
-        localStorage.setItem('admin', '1234:999999:10000:999')
+accountsJSON = JSON.parse(localStorage.getItem('Users'));
+
+//START FUNCTIONS#######################################################
+
+function beginJSON() {
+    accountUsernames = [];
+    for (var i = 0; i < accountsJSON.length; i++) {
+        accountUsernames.push(accountsJSON[i].username);
+    };
+};
+
+function save() {
+    accountsJSON[userIndex].bits = bits;
+    accountsJSON[userIndex].clickRate = clickRate;
+    accountsJSON[userIndex].genRate = genRate;
+    for (var i = 0; i < $('.upgrades').children().length; i++) {
+        eval('accountsJSON[userIndex].upgrades.item' + i + ' =  $("#item" + ' + i + '+ " > .itemOwned").html()');
     }
+    localStorage.setItem('Users', JSON.stringify(accountsJSON));
+    console.log("saved for account '" + currentUsername + "' at: " + new Date().toLocaleString() + "\n...");
+}
 
-    //START FUNCTIONS#######################################################
-
-    function save() {
-        user = $('#username').val()
-        userInfo = localStorage.getItem(user).split(':');
-        localStorage.setItem(user, userInfo[0]+':'+bits+':'+clickRate+':'+genRate)
-        console.log("saved at: " + new Date().toLocaleString());
+function setValues() {
+    bits = accountsJSON[userIndex].bits;
+    clickRate = accountsJSON[userIndex].clickRate;
+    genRate = accountsJSON[userIndex].genRate;
+    for (var i = 0; i < $('.upgrades').children().length; i++) {
+        $('.upgrades > #item' + i + ' > .itemOwned').html(eval('accountsJSON[userIndex].upgrades.item' + i));
     }
+}
 
-    function setValues(user) {
-        userInfo = localStorage.getItem(user).split(':');
-        bits = parseInt(userInfo[1]);
-        clickRate = parseInt(userInfo[2]);
-        genRate = parseInt(userInfo[3]);
-    }
-
-    function loginSuccessful(name) {
-        $('.welcome').html('Welcome, ' + name + '.')
-        $('.login').fadeOut(15, function () {
-            $('.welcome').fadeIn(15, function () {
-                $('.welcome').delay(5).fadeOut(15, function () {
-                    setValues(name);
-                    setInterval(updateBits, 250);
-                    setInterval(bitGenerator, 250);
-                    setInterval(save, 60000);
-                    $('.program').fadeIn(15);
-                });
+function loginSuccessful() {
+    $('.welcome').html('Welcome, ' + currentUsername + '.')
+    $('.login').fadeOut(1500, function () {
+        $('.welcome').fadeIn(1500, function () {
+            $('.welcome').delay(1000).fadeOut(1500, function () {
+                setValues();
+                setInterval(updateBits, 250);
+                setInterval(bitGenerator, 250);
+                setInterval(save, 60000);
+                for (var i = 0; i < $('.upgrades').children().length; i++) {
+                    for (var j = 0; j < parseInt($('#item' + i + ' > .itemOwned').html()); j++) {
+                        $('#item' + i).find('#cost').html(Math.floor($('#item' + i).find('#cost').html() * 1.15));
+                        if ($('#item' + i).find('#info').html().includes('click')) {
+                            $('#item' + i).find('.itemCost').html('Purchased');
+                        }
+                    }
+                }
+                $('.program').fadeIn(1500);
             });
         });
+    });
 
-    }
+}
 
-    //LOGIN AND REGISTER#####################################################
+//LOGIN AND REGISTER#####################################################
 
-    function checkPass() {
-        var currentUser = $('#username').val();
-        var currentUserAcc = localStorage.getItem(currentUser).split(':');
-        if (currentUserAcc.includes($('#password').val())) {
-            loginSuccessful(currentUser);
-        } else {
-            alert("Inccorect Password.");
+function checkPass() {
+    currentUsername = $('#username').val();
+    for (var i = 0; i < accountsJSON.length; i++) {
+        if ($('#username').val() == accountsJSON[i].username) {
+            userIndex = i;
         }
     }
+    if (accountsJSON[userIndex].password == ($('#password').val())) {
+        loginSuccessful();
+    } else {
+        alert("Inccorect Password.");
+    }
+}
 
-    function register() {
-        if ($('#username').val() !== '' && localStorage.getItem('Users').split(':').includes($('#username').val()) === false) {
-            if ($('#password').val() !== '') {
-                localStorage.setItem('Users', localStorage.getItem('Users') + ":" + $('#username').val());
-                localStorage.setItem($('#username').val(), $('#password').val() + ':0:1:0');
-                alert('Registration Complete!');
-            } else {
-                alert('Please enter a password!');
-            }
+function register() {
+    if ($('#username').val() !== '' && accountUsernames.includes($('#username').val()) === false) {
+        if ($('#password').val() !== '') {
+            accountsJSON.push(JSON.parse('{"username":"' + $('#username').val() + '","password":"' + $('#password').val() + '","bits":0,"clickRate":1,"genRate":0,"upgrades":{"item0":0,"item1":0,"item2":0}}'))
+            beginJSON();
+            localStorage.setItem('Users', JSON.stringify(accountsJSON));
+            alert('Registration Complete!');
         } else {
-            alert('Username already used!');
+            alert('Please enter a password!');
         }
+    } else {
+        alert('Username already used!');
     }
+}
 
-    //LOGIN AND REGISTER#####################################################
+//LOGIN AND REGISTER#####################################################
 
-    function updateBits() {
-        $("#bits").html(Math.round(bits).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-    }
+function updateBits() {
+    $("#bits").html(Math.round(bits).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+}
 
-    function bitGenerator() {
-        $("#bitGenRate").html(genRate);
-        bits += genRate / 4;
-    }
+function bitGenerator() {
+    $("#bitGenRate").html(genRate);
+    bits += genRate / 4;
+}
 
-    //END FUNCTIONS######################################################
+//END FUNCTIONS######################################################
+
+
+$(document).ready(function () {
+
+    beginJSON();
 
     $('.header h2').on('click', function () {
         $(this).css('letter-spacing', Math.floor(Math.random() * 20))
@@ -93,7 +123,7 @@ $(document).ready(function () {
     })
 
     $('#submit').on('click', function () {
-        if (localStorage.getItem('Users').split(':').includes($('#username').val())) {
+        if (accountUsernames.includes($('#username').val())) {
             checkPass();
         } else {
             alert("Username doesn't exist!");
@@ -113,7 +143,6 @@ $(document).ready(function () {
     $('.button').on('click', function () {
         $(this).css('background', colourList[Math.floor(Math.random() * colourList.length)]);
         bits += clickRate;
-        updateBits();
         $(".fa-microchip").css('transform', 'rotate(' + Math.floor(Math.random() * 180) + 'deg)');
     }).on('mouseleave', function () {
         $(this).css('background', 'linear-gradient(to bottom right, #56ccf2, #67bcff)');
@@ -121,18 +150,93 @@ $(document).ready(function () {
     })
 
     $('.delete').on('click', function () {
-        user = $('#username').val()
-        userInfo = localStorage.getItem(user).split(':');
-        localStorage.setItem(user, userInfo[0]+':0:1:0')
-        location.reload();
+        if (window.confirm("Are you sure you want to delete this account?\nYou won't be able to undo this.") && currentUsername !== 'admin') {
+            if (window.confirm("No, seriously, you're about to lose everything.\nMaybe you missclicked.\nAre you certain you wan't to do this?")) {
+                accountsJSON.splice(userIndex, 1);
+                localStorage.setItem('Users', JSON.stringify(accountsJSON));
+                location.reload();
+            }
+        } else {
+            window.alert('Account not deleted.')
+        }
     })
 
+    $('.info').on('click', function () {
+        alert('Made in HTML5, CSS3 and Javascript with <3!\n-Leon')
+    });
+
+    $('.per-second').mouseenter(function () {
+        $(this).html('<span id="bitClickRate">...</span> /click')
+        $("#bitClickRate").html(clickRate);
+    })
+
+    $('.per-second').mouseleave(function () {
+        $(this).html('<span id="bitGenRate">...</span> /second')
+        $("#bitGenRate").html(genRate);
+    })
+
+    $('.item').mouseenter(function () {
+        $(this).find(".itemName").html($(this).find("#info").html())
+    })
+
+    $('.item').mouseleave(function () {
+        $(this).find(".itemName").html($(this).find("#nameBak").html())
+    })
+
+    $('.item').on('click', function () {
+        var owned = $(this).find(".itemOwned").html();
+        var cost = $(this).find("#cost").html();
+        if (cost <= bits) {
+            bits -= cost;
+            updateBits();
+            owned++;
+            $(this).find(".itemOwned").html(owned);
+            $(this).find("#cost").html(Math.floor($(this).find("#cost").html() * 1.15));
+            if ($(this).find("#info").html().includes('click')) {
+                $(this).find(".itemCost").html('Purchased');
+            }
+
+            var info = $(this).find("#info").html().split('/');
+            if (info[1] == 'sec') {
+                genRate += parseInt(info[0].substr(1));
+            } else if (info[1] == 'click') {
+                clickRate = parseInt(info[0]);
+            } else {
+                $('.program').css({
+                    'animation': 'shake 0.7s',
+                    'animation-iteration-count': 'infinite'
+                }).delay(1000).slideDown(1000).fadeOut(1000, function () {
+                    $('.end').delay(700).fadeIn(2000);
+                    bits = 'ERROR';
+                    clickRate = 'ERROR';
+                    genRate = 'ERROR';
+                    save();
+                });
+            }
+        } else {
+            $(this).toggleClass('red');
+            $this = $(this)
+            setTimeout(function () {
+                $this.toggleClass('red');
+            }, 300)
+            $('#bits').css({
+                'animation': 'shake 0.5s',
+                'color': '#ff8787'
+            });
+            setTimeout(
+                function () {
+                    $('#bits').css({
+                        'animation': '',
+                        'color': '#51cf66'
+                    });
+                }, 500)
+        }
+    })
 
     //#########################
 
-
-    setInterval(function () {
-        if (localStorage.getItem('Users').split(':').includes($('#username').val())) {
+    setInterval(function () { //Check if user exists
+        if (accountUsernames.includes($('#username').val())) {
             $('.fa-check').css('opacity', '1');
         } else {
             $('.fa-check').css('opacity', '0')
@@ -141,10 +245,18 @@ $(document).ready(function () {
 
     setInterval(function () {
         for (var i = 0; i < $('.upgrades').children().length; i++) {
-            if (parseInt($('.upgrades > #item' + i + ' > .itemCost > #cost').html()) < bits) {
-                $('.upgrades > #item' + i + ' > .itemCost > #cost').parent().css('color', '#51cf66');
+            if (parseInt($('.upgrades > #item' + i + ' > .itemCost > #cost').html()) <= bits) {
+                $('.upgrades > #item' + i).css({
+                    'opacity': '1',
+                    backgroundColor: ''
+                });
+                $('.upgrades > #item' + i + ' > .itemCost').css('color', '#51cf66');
             } else {
-                $('.upgrades > #item' + i + ' > .itemCost > #cost').parent().css('color', '#ed6e6e');
+                $('.upgrades > #item' + i).css({
+                    'opacity': '0.7',
+                    backgroundColor: 'rgba(0, 0, 0, 0.05)'
+                });
+                $('.upgrades > #item' + i + ' > .itemCost').css('color', '#ed6e6e');
             }
         }
     }, 250)
