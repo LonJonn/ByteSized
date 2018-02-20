@@ -1,7 +1,7 @@
 var colourList = ['#ff8787', '#f783ac', '#da77f2', '#748ffc', '#3bc9db', '#69db7c', '#ffa94d'];
 
 if (localStorage.getItem('Users') === null) {
-    localStorage.setItem('Users', '[{"username":"admin","password":"1234","bits":99999,"clickRate":100,"genRate":99,"upgrades":{"item0":0}}]');
+    localStorage.setItem('Users', '[{"username":"admin","password":"1234","bits":99999,"clickRate":100,"genRate":99,"upgrades":{"item0":0},"saved":0}]');
 }
 
 accountsJSON = JSON.parse(localStorage.getItem('Users'));
@@ -16,6 +16,8 @@ function beginJSON() {
 };
 
 function save() {
+    timesSaved++;
+    accountsJSON[userIndex].saved = timesSaved;
     accountsJSON[userIndex].bits = bits;
     accountsJSON[userIndex].clickRate = clickRate;
     accountsJSON[userIndex].genRate = genRate;
@@ -30,6 +32,7 @@ function setValues() {
     bits = accountsJSON[userIndex].bits;
     clickRate = accountsJSON[userIndex].clickRate;
     genRate = accountsJSON[userIndex].genRate;
+    timesSaved = accountsJSON[userIndex].saved;
     for (var i = 0; i < $('.upgrades').children().length; i++) {
         $('.upgrades > #item' + i + ' > .itemOwned').html(eval('accountsJSON[userIndex].upgrades.item' + i));
     }
@@ -85,8 +88,10 @@ function register() {
         } else {
             alert('Please enter a password!');
         }
+    } else if ($('#username').val() !== '') {
+        alert('Username already used.');
     } else {
-        alert('Username already used!');
+        alert('Please enter a username & password to register an account.');
     }
 }
 
@@ -206,6 +211,7 @@ $(document).ready(function () {
                     'animation': 'shake 0.7s',
                     'animation-iteration-count': 'infinite'
                 }).delay(1000).slideDown(1000).fadeOut(1000, function () {
+                    $('#time').html(timesSaved);
                     $('.end').delay(700).fadeIn(2000);
                     bits = 'ERROR';
                     clickRate = 'ERROR';
