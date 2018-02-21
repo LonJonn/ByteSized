@@ -81,7 +81,7 @@ function checkPass() {
 function register() {
     if ($('#username').val() !== '' && accountUsernames.includes($('#username').val()) === false) {
         if ($('#password').val() !== '') {
-            accountsJSON.push(JSON.parse('{"username":"' + $('#username').val() + '","password":"' + $('#password').val() + '","bits":0,"clickRate":1,"genRate":0,"upgrades":{"item0":0,"item1":0,"item2":0}}'))
+            accountsJSON.push(JSON.parse('{"username":"' + $('#username').val() + '","password":"' + $('#password').val() + '","bits":0,"clickRate":1,"genRate":0,"upgrades":{"item0":0,"item1":0,"item2":0},"saved":0}'))
             beginJSON();
             localStorage.setItem('Users', JSON.stringify(accountsJSON));
             alert('Registration Complete!');
