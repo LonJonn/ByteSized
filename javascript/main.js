@@ -74,7 +74,7 @@ function checkPass() {
     if (accountsJSON[userIndex].password == ($('#password').val())) {
         loginSuccessful();
     } else {
-        alert("Inccorect Password.");
+        modal("Inccorect Password.", "Please try again.");
     }
 }
 
@@ -84,14 +84,14 @@ function register() {
             accountsJSON.push(JSON.parse('{"username":"' + $('#username').val() + '","password":"' + $('#password').val() + '","bits":0,"clickRate":1,"genRate":0,"upgrades":{"item0":0,"item1":0,"item2":0},"saved":0}'))
             beginJSON();
             localStorage.setItem('Users', JSON.stringify(accountsJSON));
-            alert('Registration Complete!');
+            modal('Registration Complete!', "You can now sign in!");
         } else {
-            alert('Please enter a password!');
+            modal('Please enter a password!', '');
         }
     } else if ($('#username').val() !== '') {
-        alert('Username already used.');
+        modal('Username already used.', "Try another username.");
     } else {
-        alert('Please enter a username & password to register an account.');
+        modal('Please enter a username & password to register an account.', '');
     }
 }
 
@@ -106,6 +106,12 @@ function bitGenerator() {
     bits += genRate / 4;
 }
 
+function modal(text1, text2) {
+    $('.modalBody>p:nth-child(1)').html(text1);
+    $('.modalBody>p:nth-child(2)').html(text2);
+    $('.modal').fadeIn(200);
+
+}
 //END FUNCTIONS######################################################
 
 
@@ -113,8 +119,12 @@ $(document).ready(function () {
 
     beginJSON();
 
+    $('.modalClose, .modalButton').on('click', function() {
+        $('.modal').fadeOut(200);
+    })
+
     $('.header h2').on('click', function () {
-        $(this).css('letter-spacing', Math.floor(Math.random() * 20))
+        $(this).css('letter-spacing', Math.floor(Math.random() * 20));
     }).on('mouseleave', function () {
         $(this).css('letter-spacing', '3px');
     })
@@ -131,7 +141,7 @@ $(document).ready(function () {
         if (accountUsernames.includes($('#username').val())) {
             checkPass();
         } else {
-            alert("Username doesn't exist!");
+            modal("Username doesn't exist!", "Please register an account first.");
         }
     })
 
@@ -162,12 +172,12 @@ $(document).ready(function () {
                 location.reload();
             }
         } else {
-            window.alert('Account not deleted.')
+            modal('Account not deleted.', '')
         }
     })
 
     $('.info').on('click', function () {
-        alert('Made in HTML5, CSS3 and Javascript with <3!\n-Leon')
+        modal('Made in HTML5, CSS3 and Javascript with <i class="fas fa-heart"></i>!', '-Leon')
     });
 
     $('.per-second').mouseenter(function () {

@@ -1,3 +1,494 @@
-*{box-sizing:border-box;border:0;margin:0;user-select:none}*:focus{outline:none}html{min-height:100%;background:linear-gradient(to bottom right, #f3e7e9 0%, #d8e7ff 99%, #e3eeff 100%);font-family:'Asap', 'sans-serif';letter-spacing:px}::-webkit-scrollbar-track{border-radius:10px}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{border-radius:20px;background-color:#555}.line{width:100%;height:2px;margin:6px 0px 12px;opacity:0.6;background-color:#313b45;border-color:#313b45;border-top:0px;border-left:0px;border-right:0px}.header{width:auto;height:35px;background:#67bcff;text-align:center;cursor:pointer}.header h2{color:white;font-family:sans-serif;font-size:25px;line-height:32px;letter-spacing:3px;font-family:'Oswald', sans-serif !important;font-weight:bold !important;transition-duration:0.2s}.header h2 span{position:relative;top:-3px}.login{border:solid 2px #67bcff;border-radius:2px;background:linear-gradient(120deg, #fff 0%, #f1faff 100%);margin:20vh auto 0;width:680px;height:350px;box-shadow:4px 4px 30px rgba(0,0,0,0.3)}.login *{font-family:'Source Sans Pro', sans-serif;font-weight:Bold;transition-duration:0.2s}.login .fa-user,.login .fa-unlock-alt{position:relative;top:4px;left:-3px;transform:scale(0.8);color:#313b45}.login .fa-check{position:relative;left:15px;top:-2px;transform:scale(1.5);color:#53bf65;opacity:0}.login #showhide{display:inline;position:relative;top:5px;left:-50px;cursor:pointer}.login .fa-eye-slash{transform:scale(0.7);color:#777d84}.login .fa-eye-slash:active{transform:scale(0.6)}.login .user{position:relative;left:-6px;text-align:center}.login .pass{position:relative;left:5px;text-align:center}.login #username{margin:35px auto}.login .entry{background:#e9ecef;outline:0;margin:0 auto 35px;width:300px;font-size:25px;border-radius:3px;border:solid 2px #e9ecef;padding:6px 10px;color:#313b45}.login .entry:focus{border:solid 2px #67bcff}.login button{display:block;outline:0;color:#fafafa;background:#51cf66;margin:0 auto;font-size:30px;border-radius:5px;border-bottom:solid 4px #37b24d;padding:8px 40px;margin-bottom:8px;cursor:pointer}.login button:hover{background:#40c057}.login button:active{transform:scale(0.9)}.login #register{color:#495057;font-size:18px;text-align:center}.login #register span{cursor:pointer}.login #register span:hover{color:#67bcff}.login #register span:active{color:#529cd6}.welcome,.end{font-family:'Raleway', sans-serif;font-size:5em;text-align:center;margin:30vh 0 0;color:#313b45;display:none}.program{border:solid 2px #67bcff;border-radius:2px;background:linear-gradient(120deg, #fff 0%, #f1faff 100%);margin:10vh auto 0;width:1030px;height:485px;box-shadow:4px 4px 30px rgba(0,0,0,0.3);display:none}.sidebar{display:inline-block;background:#e9ecef;width:250px;height:446px;box-shadow:10px 2px 30px 0px rgba(0,0,0,0.2);padding:15px;color:#313b45}.sidebar h2{font-weight:600;display:inline-block;margin:0 110px 0 0}.sidebar .stats{width:89%;margin:-25px 0 35px 25px;display:block;font-family:'Oswald', 'sans-serif';font-weight:bold;font-size:1.5em}.sidebar .stats h1{display:block;font-family:'Oswald', 'sans-serif';color:#51cf66;font-size:2.1em;line-height:40px;margin-bottom:12px;transition-duration:0.2s}.sidebar .stats .per-second{margin:5px 0 0 0;font-weight:lighter;float:right;font-size:20px;font-weight:0;vertical-align:bottom}.sidebar .stats .per-second span{color:#ff922b;font-weight:bold}.sidebar .storage{margin:0 0 178px 0}.main{display:inline-block;vertical-align:top;width:518px;height:546px}.main .button{display:block;background:linear-gradient(to bottom right, #56ccf2, #67bcff);border-radius:100px;width:200px;height:200px;margin:20% auto 0;transition-duration:0.2s;cursor:pointer}.main .button .fa-microchip{margin:44px 0 0 44px;color:#343a40;transition-duration:0.15s}.main .button:hover{transform:scale(1.2)}.main .button:active{transform:scale(1.1)}.shop{display:inline-block;vertical-align:top;text-align:right;width:250px;height:446px;padding:15px;color:#313b45}.shop h2{font-weight:600;display:inline-block;margin:0 2px 0 90px}.upgrades{height:370px;overflow-y:hidden;direction:rtl;padding-left:12px;cursor:pointer}.upgrades:hover{overflow-y:scroll;padding-left:8px}.item{font-family:'Oswald', 'sans-serif';font-weight:bold;color:#363e46;padding:0 5px;border-bottom:solid 2px rgba(54,62,70,0.65);direction:ltr;transition-duration:0.2s}.item:hover{background:rgba(81,178,232,0.15);border-right:solid 5px #67bcff;padding-right:10px}.item:active{background:rgba(81,178,232,0.35)}.itemCost{font-size:1em;margin-bottom:5px;color:#4fcf64}.itemOwned{color:#2d85cb;position:relative;display:inline;top:-4px;float:left;font-size:46px;opacity:0.55;padding-left:2px}.itemOwned span{font-size:0.5em;color:#000}.itemName{font-weight:normal;display:inline-block;font-size:1.6em}.delete{font-size:1.2em;transition-duration:0.3s;cursor:pointer;margin-bottom:10px}.delete:hover{color:#f73c3c;animation:shake 0.5s;animation-iteration-count:infinite}.info{font-size:1.2em;transition-duration:0.3s;cursor:pointer}.info:hover{color:#44acff}@keyframes shake{20%,40%,60%{transform:translate(-3px, 1px) rotate(0deg)}0%,30%,80%{transform:translate(-1px, -1px) rotate(1deg)}50%,70%,90%{transform:translate(1px, 2px) rotate(0deg)}10%,100%{transform:translate(1px, -2px) rotate(-3deg)}}.fa-cog{transition-duration:0.5s}.fa-cog:hover{transform:rotate(180deg)}@keyframes pulse{0%,50%,100%{transform:scale(1)}30%,70%{transform:scale(0.8)}}.fa-hdd:hover{animation:pulse 0.5s}@keyframes up{0%,100%{transform:translateY(0)}95%{transform:translateY(-10px)}}.fa-upload:hover{animation:up 0.5s}.red{background-color:rgba(255,0,0,0.18) !important}
+/* line 5, SDD/css/style.scss */
+* {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  user-select: none; }
+
+/* line 12, SDD/css/style.scss */
+*:focus {
+  outline: none; }
+
+/* line 16, SDD/css/style.scss */
+html {
+  min-height: 100%;
+  background: linear-gradient(to bottom right, #f3e7e9 0%, #d8e7ff 99%, #e3eeff 100%);
+  font-family: 'Asap', 'sans-serif';
+  letter-spacing: px; }
+
+/* line 23, SDD/css/style.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 27, SDD/css/style.scss */
+::-webkit-scrollbar {
+  width: 4px; }
+
+/* line 31, SDD/css/style.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #555555; }
+
+/* line 37, SDD/css/style.scss */
+.modal {
+  z-index: 3;
+  display: none;
+  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.25); }
+
+/* line 50, SDD/css/style.scss */
+.modalHeader {
+  padding: 4px 16px 6px;
+  background-color: #ff5252;
+  color: white; }
+
+/* line 56, SDD/css/style.scss */
+.modalBody {
+  padding: 2px 16px; }
+
+/* line 60, SDD/css/style.scss */
+.modalContent {
+  background-color: #f8f8f8;
+  margin: 220px auto;
+  position: relative;
+  padding: 0;
+  border: solid 2px #ff5252;
+  padding-bottom: 10px;
+  width: 35%;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s; }
+  /* line 73, SDD/css/style.scss */
+  .modalContent p {
+    padding: 10px;
+    font-size: 1.1em; }
+
+/* line 79, SDD/css/style.scss */
+.modalButton {
+  width: 80px;
+  height: 30px;
+  background: #5e90ff;
+  text-align: center;
+  padding-top: 6px;
+  font-weight: bold;
+  color: white;
+  float: right;
+  margin-right: 10px;
+  border-radius: 3px;
+  animation-duration: 0.2s; }
+  /* line 92, SDD/css/style.scss */
+  .modalButton:hover {
+    background: #427bfa;
+    cursor: pointer; }
+  /* line 97, SDD/css/style.scss */
+  .modalButton:active {
+    background: #3e72e5; }
+
+@keyframes animatetop {
+  from {
+    top: -100px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+
+/* line 113, SDD/css/style.scss */
+.modalClose {
+  color: #e8e8e8;
+  float: right;
+  font-size: 24px;
+  font-weight: bold; }
+  /* line 119, SDD/css/style.scss */
+  .modalClose:hover, .modalClose:focus {
+    color: #4e4e4e;
+    text-decoration: none;
+    cursor: pointer; }
+
+/* line 127, SDD/css/style.scss */
+.line {
+  width: 100%;
+  height: 2px;
+  margin: 6px 0px 12px;
+  opacity: 0.6;
+  background-color: #313b45;
+  border-color: #313b45;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px; }
+
+/* line 139, SDD/css/style.scss */
+.header {
+  width: auto;
+  height: 35px;
+  background: #67bcff;
+  text-align: center;
+  cursor: pointer; }
+  /* line 146, SDD/css/style.scss */
+  .header h2 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: bold !important;
+    transition-duration: 0.2s; }
+    /* line 156, SDD/css/style.scss */
+    .header h2 span {
+      position: relative;
+      top: -3px; }
+
+/* line 163, SDD/css/style.scss */
+.login {
+  border: solid 2px #67bcff;
+  border-radius: 2px;
+  background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
+  margin: 20vh auto 0;
+  width: 680px;
+  height: 350px;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3); }
+  /* line 171, SDD/css/style.scss */
+  .login * {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: Bold;
+    transition-duration: 0.2s; }
+  /* line 177, SDD/css/style.scss */
+  .login .fa-user,
+  .login .fa-unlock-alt {
+    position: relative;
+    top: 4px;
+    left: -3px;
+    transform: scale(0.8);
+    color: #313b45; }
+  /* line 186, SDD/css/style.scss */
+  .login .fa-check {
+    position: relative;
+    left: 15px;
+    top: -2px;
+    transform: scale(1.5);
+    color: #53bf65;
+    opacity: 0; }
+  /* line 195, SDD/css/style.scss */
+  .login #showhide {
+    display: inline;
+    position: relative;
+    top: 5px;
+    left: -50px;
+    cursor: pointer; }
+  /* line 203, SDD/css/style.scss */
+  .login .fa-eye-slash {
+    transform: scale(0.7);
+    color: #777d84; }
+    /* line 207, SDD/css/style.scss */
+    .login .fa-eye-slash:active {
+      transform: scale(0.6); }
+  /* line 212, SDD/css/style.scss */
+  .login .user {
+    position: relative;
+    left: -6px;
+    text-align: center; }
+  /* line 218, SDD/css/style.scss */
+  .login .pass {
+    position: relative;
+    left: 5px;
+    text-align: center; }
+  /* line 224, SDD/css/style.scss */
+  .login #username {
+    margin: 35px auto; }
+  /* line 228, SDD/css/style.scss */
+  .login .entry {
+    background: #e9ecef;
+    outline: 0;
+    margin: 0 auto 35px;
+    width: 300px;
+    font-size: 25px;
+    border-radius: 3px;
+    border: solid 2px #e9ecef;
+    padding: 6px 10px;
+    color: #313b45; }
+    /* line 239, SDD/css/style.scss */
+    .login .entry:focus {
+      border: solid 2px #67bcff; }
+  /* line 244, SDD/css/style.scss */
+  .login button {
+    display: block;
+    outline: 0;
+    color: #fafafa;
+    background: #51cf66;
+    margin: 0 auto;
+    font-size: 30px;
+    border-radius: 5px;
+    border-bottom: solid 4px #37b24d;
+    padding: 8px 40px;
+    margin-bottom: 8px;
+    cursor: pointer; }
+    /* line 257, SDD/css/style.scss */
+    .login button:hover {
+      background: #40c057; }
+    /* line 261, SDD/css/style.scss */
+    .login button:active {
+      transform: scale(0.9); }
+  /* line 266, SDD/css/style.scss */
+  .login #register {
+    color: #495057;
+    font-size: 18px;
+    text-align: center; }
+    /* line 271, SDD/css/style.scss */
+    .login #register span {
+      cursor: pointer; }
+      /* line 273, SDD/css/style.scss */
+      .login #register span:hover {
+        color: #67bcff; }
+      /* line 277, SDD/css/style.scss */
+      .login #register span:active {
+        color: #529cd6; }
+
+/* line 284, SDD/css/style.scss */
+.welcome,
+.end {
+  font-family: 'Raleway', sans-serif;
+  font-size: 5em;
+  text-align: center;
+  margin: 30vh 0 0;
+  color: #313b45;
+  display: none; }
+
+/* line 294, SDD/css/style.scss */
+.program {
+  border: solid 2px #67bcff;
+  border-radius: 2px;
+  background: linear-gradient(120deg, #ffffff 0%, #f1faff 100%);
+  margin: 10vh auto 0;
+  width: 1030px;
+  height: 485px;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+  display: none; }
+
+/* line 305, SDD/css/style.scss */
+.sidebar {
+  display: inline-block;
+  background: #e9ecef;
+  width: 250px;
+  height: 446px;
+  box-shadow: 10px 2px 30px 0px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  color: #313b45; }
+  /* line 314, SDD/css/style.scss */
+  .sidebar h2 {
+    font-weight: 600;
+    display: inline-block;
+    margin: 0 110px 0 0; }
+  /* line 320, SDD/css/style.scss */
+  .sidebar .stats {
+    width: 89%;
+    margin: -25px 0 35px 25px;
+    display: block;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: bold;
+    font-size: 1.5em; }
+    /* line 328, SDD/css/style.scss */
+    .sidebar .stats h1 {
+      display: block;
+      font-family: 'Oswald', 'sans-serif';
+      color: #51cf66;
+      font-size: 2.1em;
+      line-height: 40px;
+      margin-bottom: 12px;
+      transition-duration: 0.2s; }
+    /* line 338, SDD/css/style.scss */
+    .sidebar .stats .per-second {
+      margin: 5px 0 0 0;
+      font-weight: lighter;
+      float: right;
+      font-size: 20px;
+      font-weight: 0;
+      vertical-align: bottom; }
+      /* line 346, SDD/css/style.scss */
+      .sidebar .stats .per-second span {
+        color: #ff922b;
+        font-weight: bold; }
+  /* line 357, SDD/css/style.scss */
+  .sidebar .storage {
+    margin: 0 0 178px 0; }
+
+/* line 362, SDD/css/style.scss */
+.main {
+  display: inline-block;
+  vertical-align: top;
+  width: 518px;
+  height: 546px; }
+  /* line 368, SDD/css/style.scss */
+  .main .button {
+    display: block;
+    background: linear-gradient(to bottom right, #56ccf2, #67bcff);
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 20% auto 0;
+    transition-duration: 0.2s;
+    cursor: pointer; }
+    /* line 378, SDD/css/style.scss */
+    .main .button .fa-microchip {
+      margin: 44px 0 0 44px;
+      color: #343a40;
+      transition-duration: 0.15s; }
+    /* line 384, SDD/css/style.scss */
+    .main .button:hover {
+      transform: scale(1.2); }
+    /* line 388, SDD/css/style.scss */
+    .main .button:active {
+      transform: scale(1.1); }
+
+/* line 396, SDD/css/style.scss */
+.shop {
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  width: 250px;
+  height: 446px;
+  padding: 15px;
+  color: #313b45; }
+  /* line 405, SDD/css/style.scss */
+  .shop h2 {
+    font-weight: 600;
+    display: inline-block;
+    margin: 0 2px 0 90px; }
+
+/* line 412, SDD/css/style.scss */
+.upgrades {
+  height: 370px;
+  overflow-y: hidden;
+  direction: rtl;
+  padding-left: 12px;
+  cursor: pointer; }
+  /* line 419, SDD/css/style.scss */
+  .upgrades:hover {
+    overflow-y: scroll;
+    padding-left: 8px; }
+
+/* line 425, SDD/css/style.scss */
+.item {
+  font-family: 'Oswald', 'sans-serif';
+  font-weight: bold;
+  color: #363e46;
+  padding: 0 5px;
+  border-bottom: solid 2px rgba(54, 62, 70, 0.65);
+  direction: ltr;
+  transition-duration: 0.2s; }
+  /* line 434, SDD/css/style.scss */
+  .item:hover {
+    background: rgba(81, 178, 232, 0.15);
+    border-right: solid 5px #67bcff;
+    padding-right: 10px; }
+  /* line 440, SDD/css/style.scss */
+  .item:active {
+    background: rgba(81, 178, 232, 0.35); }
+
+/* line 445, SDD/css/style.scss */
+.itemCost {
+  font-size: 1em;
+  margin-bottom: 5px;
+  color: #4fcf64; }
+
+/* line 451, SDD/css/style.scss */
+.itemOwned {
+  color: #2d85cb;
+  position: relative;
+  display: inline;
+  top: -4px;
+  float: left;
+  font-size: 46px;
+  opacity: 0.55;
+  padding-left: 2px; }
+  /* line 461, SDD/css/style.scss */
+  .itemOwned span {
+    font-size: 0.5em;
+    color: #000; }
+
+/* line 467, SDD/css/style.scss */
+.itemName {
+  font-weight: normal;
+  display: inline-block;
+  font-size: 1.6em; }
+
+/* line 474, SDD/css/style.scss */
+.delete {
+  font-size: 1.2em;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  margin-bottom: 10px; }
+  /* line 480, SDD/css/style.scss */
+  .delete:hover {
+    color: #f73c3c;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite; }
+
+/* line 487, SDD/css/style.scss */
+.info {
+  font-size: 1.2em;
+  transition-duration: 0.3s;
+  cursor: pointer; }
+  /* line 492, SDD/css/style.scss */
+  .info:hover {
+    color: #44acff; }
+
+@keyframes shake {
+  20%,
+  40%,
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  0%,
+  30%,
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  50%,
+  70%,
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  10%,
+  100% {
+    transform: translate(1px, -2px) rotate(-3deg); } }
+
+/* line 519, SDD/css/style.scss */
+.fa-cog {
+  transition-duration: 0.5s; }
+  /* line 522, SDD/css/style.scss */
+  .fa-cog:hover {
+    transform: rotate(180deg); }
+
+@keyframes pulse {
+  0%,
+  50%,
+  100% {
+    transform: scale(1); }
+  30%,
+  70% {
+    transform: scale(0.8); } }
+
+/* line 541, SDD/css/style.scss */
+.fa-hdd:hover {
+  animation: pulse 0.5s; }
+
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0); }
+  95% {
+    transform: translateY(-10px); } }
+
+/* line 558, SDD/css/style.scss */
+.fa-upload:hover {
+  animation: up 0.5s; }
+
+/* line 563, SDD/css/style.scss */
+.red {
+  background-color: rgba(255, 0, 0, 0.18) !important; }
 
 /*# sourceMappingURL=style.css.map */
